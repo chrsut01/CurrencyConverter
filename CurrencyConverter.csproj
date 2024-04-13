@@ -9,6 +9,7 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.2"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0-preview.3.24172.4" />
         <PackageReference Include="NUnit" Version="4.1.0" />
         <PackageReference Include="NUnit3TestAdapter" Version="4.5.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
@@ -18,7 +19,9 @@
       <_ContentIncludedByDefault Remove="Data\obj\Data.csproj.nuget.dgspec.json" />
       <_ContentIncludedByDefault Remove="Data\obj\project.assets.json" />
       <_ContentIncludedByDefault Remove="Data\obj\project.packagespec.json" />
+
     </ItemGroup>
+
 
 
 
