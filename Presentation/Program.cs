@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using CurrencyConverter;
+using CurrencyConverter.Data;
 using CurrencyConverter.Models;
 using Microsoft.AspNetCore.Authorization;
 
@@ -17,6 +18,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<Converter>();
+builder.Services.AddScoped<IConversionRepository, ConversionRepository>();
+
 
 var app = builder.Build();
 
@@ -62,9 +65,6 @@ app.MapGet("/currencyconverter", (Converter converter, string fromCurrency, stri
     .WithName("CurrencyConverter")
     .WithMetadata(new AllowAnonymousAttribute());
 
-
 app.Run();
-
-
 
 record ConversionResult(string SourceCurrency, string TargetCurrency, decimal Value, decimal Result, DateTime Date);
